@@ -1,0 +1,4 @@
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Entity\bin\Release\ETNA.SGI.Entity.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Entity\bin\Release\ETNA.SGI.Entity.pdb
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Entity\obj\Release\ETNA.SGI.Entity.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Entity\obj\Release\ETNA.SGI.Entity.pdb

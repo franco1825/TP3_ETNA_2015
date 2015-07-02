@@ -1,0 +1,8 @@
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\bin\Release\ETNA.SGI.Data.dll.config
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\bin\Release\ETNA.SGI.Data.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\bin\Release\ETNA.SGI.Data.pdb
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\bin\Release\ETNA.SGI.Entity.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\bin\Release\ETNA.SGI.Entity.pdb
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\obj\Release\ETNA.SGI.Data.csprojResolveAssemblyReference.cache
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\obj\Release\ETNA.SGI.Data.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\obj\Release\ETNA.SGI.Data.pdb

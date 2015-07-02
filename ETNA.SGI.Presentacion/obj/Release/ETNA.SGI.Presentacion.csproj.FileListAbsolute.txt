@@ -1,0 +1,15 @@
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\bin\Release\ETNA.SGI.Presentacion.exe.config
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\bin\Release\ETNA.SGI.Presentacion.exe
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\bin\Release\ETNA.SGI.Presentacion.pdb
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.csprojResolveAssemblyReference.cache
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.frmSplash.resources
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.Login.resources
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.MDIParent1.resources
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.MenuPrincipal.resources
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.Properties.Resources.resources
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.Formularios.Ventas.frmConsultarCliente.resources
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.Formularios.Ventas.frmPedido.resources
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.csproj.GenerateResource.Cache
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.exe.licenses
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.exe
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Presentacion\obj\Release\ETNA.SGI.Presentacion.pdb

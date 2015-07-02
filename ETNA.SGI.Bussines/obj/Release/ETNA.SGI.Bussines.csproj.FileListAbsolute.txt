@@ -1,0 +1,17 @@
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\ETNA.SGI.Bussines.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\ETNA.SGI.Bussines.pdb
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\ETNA.SGI.Data.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\ETNA.SGI.Entity.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\Newtonsoft.Json.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\System.Net.Http.Formatting.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\System.Web.Http.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\System.Web.Http.WebHost.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\ETNA.SGI.Data.pdb
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\ETNA.SGI.Entity.pdb
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\Newtonsoft.Json.xml
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\System.Net.Http.Formatting.xml
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\System.Web.Http.xml
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\bin\Release\System.Web.Http.WebHost.xml
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\obj\Release\ETNA.SGI.Bussines.csprojResolveAssemblyReference.cache
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\obj\Release\ETNA.SGI.Bussines.dll
+D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Bussines\obj\Release\ETNA.SGI.Bussines.pdb
