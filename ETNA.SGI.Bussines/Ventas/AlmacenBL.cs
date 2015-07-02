@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ETNA.SGI.Data;
 using ETNA.SGI.Data.Ventas;
+using ETNA.SGI.Entity.Ventas;
 
 namespace ETNA.SGI.Bussines.Ventas
 {
@@ -22,6 +23,13 @@ namespace ETNA.SGI.Bussines.Ventas
         {
 
             return almdao.obteneralmacenesFiltro(filtro);
+        }
+
+
+        public AlmacenBE getalmacen(int cod)
+        {
+
+            return almdao.getalmacen(cod);
         }
 
 

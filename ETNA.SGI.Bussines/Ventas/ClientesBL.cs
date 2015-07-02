@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ETNA.SGI.Data.Ventas;
+using ETNA.SGI.Entity.Ventas;
 
 namespace ETNA.SGI.Bussines.Ventas 
 {
@@ -21,6 +22,13 @@ namespace ETNA.SGI.Bussines.Ventas
         {
 
             return c.obtenerclientesFiltro(filtro);
+        }
+
+
+        public ClienteBE getcliente(int filtro)
+        {
+
+            return c.getcliente(filtro);
         }
 
     }

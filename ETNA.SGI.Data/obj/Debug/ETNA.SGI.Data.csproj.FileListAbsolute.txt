@@ -6,11 +6,3 @@ D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\bin\Debug\ET
 D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.csprojResolveAssemblyReference.cache
 D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.dll
 D:\Proyecto ETNA\SOFTWARE NUEVO\ETNA.SGI.Presentacion\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.pdb
-D:\Usuarios\fmori\Desktop\ETNA.SGI.Presentacion 30-06-2015  9-16 pm\ETNA.SGI.Data\bin\Debug\ETNA.SGI.Data.dll.config
-D:\Usuarios\fmori\Desktop\ETNA.SGI.Presentacion 30-06-2015  9-16 pm\ETNA.SGI.Data\bin\Debug\ETNA.SGI.Data.dll
-D:\Usuarios\fmori\Desktop\ETNA.SGI.Presentacion 30-06-2015  9-16 pm\ETNA.SGI.Data\bin\Debug\ETNA.SGI.Data.pdb
-D:\Usuarios\fmori\Desktop\ETNA.SGI.Presentacion 30-06-2015  9-16 pm\ETNA.SGI.Data\bin\Debug\ETNA.SGI.Entity.dll
-D:\Usuarios\fmori\Desktop\ETNA.SGI.Presentacion 30-06-2015  9-16 pm\ETNA.SGI.Data\bin\Debug\ETNA.SGI.Entity.pdb
-D:\Usuarios\fmori\Desktop\ETNA.SGI.Presentacion 30-06-2015  9-16 pm\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.csprojResolveAssemblyReference.cache
-D:\Usuarios\fmori\Desktop\ETNA.SGI.Presentacion 30-06-2015  9-16 pm\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.dll
-D:\Usuarios\fmori\Desktop\ETNA.SGI.Presentacion 30-06-2015  9-16 pm\ETNA.SGI.Data\obj\Debug\ETNA.SGI.Data.pdb

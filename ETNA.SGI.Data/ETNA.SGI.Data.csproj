@@ -52,6 +52,7 @@
     <Compile Include="Ventas\CategoriasDAO.cs" />
     <Compile Include="Ventas\ClientesDAO.cs" />
     <Compile Include="Ventas\DireccionDAO.cs" />
+    <Compile Include="Ventas\ModalidaCreditoDAO.cs" />
     <Compile Include="Ventas\MonedadDAO.cs" />
     <Compile Include="Ventas\PedidoDAO.cs" />
     <Compile Include="Ventas\ProductosDAO.cs" />

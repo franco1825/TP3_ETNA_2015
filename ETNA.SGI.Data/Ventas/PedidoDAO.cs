@@ -145,6 +145,58 @@ namespace ETNA.SGI.Data.Ventas
             }
         }
 
+
+        public Boolean DELETEPEDIDOS(int codigo)
+        {
+            String con = app.Default.Setting;
+           
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+             connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                SqlTransaction transaction;
+
+
+                // Start a local transaction.
+                transaction = connection.BeginTransaction("SampleTransaction");
+
+                // Must assign both transaction object and connection 
+                // to Command object for a pending local transaction
+                command.Connection = connection;
+                command.Transaction = transaction;
+
+                try
+                {
+
+                    command.CommandText =
+                                 "sp_vt_deletepedido";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add(
+              new SqlParameter("@codigo", codigo));
+
+                    command.ExecuteNonQuery();
+
+
+                    // Attempt to commit the transaction.
+                    transaction.Commit();
+
+                    return true;
+
+                }
+                catch (Exception)
+                {
+                    return false;
+                   
+                }
+
+
+
+
+            }
+
+            return true;
+        }
  
 
 
@@ -170,6 +222,461 @@ namespace ETNA.SGI.Data.Ventas
             return datos;
 
         }
+
+
+
+        public PedidoBE getPedido(int id)
+            {
+            PedidoBE be = new PedidoBE();
+
+            SqlConnection con = DConexion.obtenerBD();
+
+
+
+            string textoCmd = "sp_vt_getpedido";
+
+            SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+            // 3. add parameter to command, which
+            // will be passed to the stored procedure
+            cmd.Parameters.Add(
+                new SqlParameter("@codpedido", id));
+
+
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+
+                    if (object.ReferenceEquals(dr["PedidoId"], DBNull.Value))
+                    {
+                        be.PKID = 0;
+                    }
+                    else
+                    {
+                        be.PKID = int.Parse(dr["PedidoId"].ToString());
+                    }
+
+
+                     if (object.ReferenceEquals(dr["ClienteId"], DBNull.Value))
+                    {
+                        be.IDCliente = 0;
+                    }
+                    else
+                    {
+                        be.IDCliente = int.Parse(dr["ClienteId"].ToString());
+                    }
+
+
+
+                     if (object.ReferenceEquals(dr["FechaEmision"], DBNull.Value))
+                    {
+                       
+                    }
+                    else
+                     {
+                         be.FechaEmision = DateTime.Parse((dr["FechaEmision"].ToString()));
+                     }
+
+
+
+                     if (object.ReferenceEquals(dr["FechaEntrega"], DBNull.Value))
+                    {
+                      
+                    }
+                    else
+                    {
+                        be.FechaEntrega = DateTime.Parse((dr["FechaEntrega"].ToString()));
+                    }
+
+
+                     if (object.ReferenceEquals(dr["ModalidadCreditoId"], DBNull.Value))
+                    {
+                       // be.IDModalidadCredito = 0;
+                    }
+                    else
+                    {
+                        be.IDModalidadCredito = int.Parse(dr["ModalidadCreditoId"].ToString());
+                    }
+
+
+
+                     if (object.ReferenceEquals(dr["FechaPago"], DBNull.Value))
+                    {
+                        //be. = 0;
+                    }
+                    else
+                    {
+                        be.FechaPago = DateTime.Parse(dr["FechaPago"].ToString());
+                    }
+
+
+                     if (object.ReferenceEquals(dr["Credito"], DBNull.Value))
+                    {
+                       // be.Credito = true;
+                    }
+                    else
+                    {
+                        be.Credito = Boolean.Parse(dr["Credito"].ToString());
+                    }
+
+
+
+                     if (object.ReferenceEquals(dr["Direccion"], DBNull.Value))
+                    {
+                        be.Direccion = "";
+                    }
+                    else
+                    {
+                        be.Direccion = dr["Direccion"].ToString();
+                    }
+
+
+
+                     if (object.ReferenceEquals(dr["EmpleadoId"], DBNull.Value))
+                    {
+                        be.IDVendedor = 0;
+                    }
+                    else
+                    {
+                        be.IDVendedor = int.Parse(dr["EmpleadoId"].ToString());
+                    }
+
+
+
+                     if (object.ReferenceEquals(dr["Observacion"], DBNull.Value))
+                    {
+                        be.Observacion = "";
+                    }
+                    else
+                    {
+                        be.Observacion = dr["Observacion"].ToString();
+                    }
+
+
+                     if (object.ReferenceEquals(dr["PrecioIncluyeImpuesto"], DBNull.Value))
+                    {
+                        //be.PrecioIncluyeImpuesto = 0;
+                    }
+                    else
+                    {
+                        be.PrecioIncluyeImpuesto = Boolean.Parse(dr["PrecioIncluyeImpuesto"].ToString());
+                    }
+
+
+                     if (object.ReferenceEquals(dr["EstadoFacturacion"], DBNull.Value))
+                    {
+                        be.EstadoFacturacion = "";
+                    }
+                    else
+                    {
+                        be.EstadoFacturacion = dr["EstadoFacturacion"].ToString();
+                    }
+
+
+
+                     if (object.ReferenceEquals(dr["DireccionEntrega"], DBNull.Value))
+                    {
+                        be.DireccionEntrega = "";
+                    }
+                    else
+                    {
+                        be.DireccionEntrega = dr["DireccionEntrega"].ToString();
+                    }
+
+
+
+
+
+
+
+
+
+                }
+            }
+
+
+            return be;
+
+            }
+
+
+        public DataTable obtenerDetalledPedidos(int codpedido)
+        {
+            SqlConnection con = DConexion.obtenerBD();
+
+            DataTable datos = new DataTable();
+
+            string textoCmd = "sp_vt_getdetalllepedido";
+
+            SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // 3. add parameter to command, which
+            // will be passed to the stored procedure
+            cmd.Parameters.Add(
+                new SqlParameter("@codpedido", codpedido));
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(datos);
+
+            return datos;
+
+        }
+
+
+
+        public Boolean updatedetallepedido(int codigodetallepedido,double cant)
+        {
+            String con = app.Default.Setting;
+
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                SqlTransaction transaction;
+
+
+                // Start a local transaction.
+                transaction = connection.BeginTransaction("SampleTransaction");
+
+                // Must assign both transaction object and connection 
+                // to Command object for a pending local transaction
+                command.Connection = connection;
+                command.Transaction = transaction;
+
+                try
+                {
+
+                    command.CommandText =
+                                 "sp_vt_updetallepedido";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add(
+              new SqlParameter("@coddetallepedidoid", codigodetallepedido));
+                    command.Parameters.Add(
+                                  new SqlParameter("@cantidad", cant));
+
+                    command.ExecuteNonQuery();
+
+                    // Attempt to commit the transaction.
+                    transaction.Commit();
+                    return true;
+
+                }
+                catch (Exception)
+                {
+                    return false;
+
+                }
+
+
+
+
+            }
+
+            return true;
+        }
+
+
+
+        public Boolean insertDetallePedido(PedidoDetalleBE be) {
+
+            String con = app.Default.Setting;
+
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                SqlTransaction transaction;
+
+
+                // Start a local transaction.
+                transaction = connection.BeginTransaction("SampleTransaction");
+
+                // Must assign both transaction object and connection 
+                // to Command object for a pending local transaction
+                command.Connection = connection;
+                command.Transaction = transaction;
+
+                try
+                {
+
+                    command.CommandText =
+                                 "sp_vt_insertdetpedido";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Clear();
+                    command.Parameters.Add(
+                   new SqlParameter("@idproducto", be.idproducto));
+                    command.Parameters.Add(
+          new SqlParameter("@cantidad", be.cantidad));
+                    command.Parameters.Add(
+         new SqlParameter("@precio", be.total));
+                    command.Parameters.Add(
+          new SqlParameter("@observacion", be.observacion));
+                    command.Parameters.Add(
+          new SqlParameter("@IdPedido", be.IdPedido));
+
+
+                  
+                    command.ExecuteNonQuery();
+
+                    // Attempt to commit the transaction.
+                    transaction.Commit();
+
+                    return true;
+
+                }
+                catch (Exception)
+                {
+                    return false;
+
+                }
+
+
+
+
+            }
+
+            return true;
+            }
+
+        public Boolean deletedetallepedido(int codigodetallepedido)
+        {
+            String con = app.Default.Setting;
+
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                SqlTransaction transaction;
+
+
+                // Start a local transaction.
+                transaction = connection.BeginTransaction("SampleTransaction");
+
+                // Must assign both transaction object and connection 
+                // to Command object for a pending local transaction
+                command.Connection = connection;
+                command.Transaction = transaction;
+
+                try
+                {
+
+                    command.CommandText =
+                                 "sp_vt_deletedetallepedido";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add(
+              new SqlParameter("@detallepedidoid", codigodetallepedido));
+                  
+                    command.ExecuteNonQuery();
+
+                    // Attempt to commit the transaction.
+                    transaction.Commit();
+
+                    return true;
+
+                }
+                catch (Exception)
+                {
+                    return false;
+
+                }
+
+
+
+
+            }
+
+            return true;
+        }
+
+
+        public Boolean updtpedido(int codigopedido,int codigocli ,DateTime fecemisiom,DateTime fecentrega)
+        {
+            String con = app.Default.Setting;
+
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                SqlTransaction transaction;
+
+
+                // Start a local transaction.
+                transaction = connection.BeginTransaction("SampleTransaction");
+
+                // Must assign both transaction object and connection 
+                // to Command object for a pending local transaction
+                command.Connection = connection;
+                command.Transaction = transaction;
+
+                try
+                {
+
+                    command.CommandText =
+                                 "sp_vt_uppedido";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add(
+              new SqlParameter("@codpedido", codigopedido));
+
+                    command.Parameters.Add(
+          new SqlParameter("@codigocli", codigocli));
+
+                    command.Parameters.Add(
+          new SqlParameter("@fechaemision", fecemisiom));
+
+                    command.Parameters.Add(
+          new SqlParameter("@fecaentrega", fecentrega));
+
+                    command.ExecuteNonQuery();
+
+
+                    // Attempt to commit the transaction.
+                    transaction.Commit();
+
+                    return true;
+
+                }
+                catch (Exception)
+                {
+                    return false;
+
+                }
+
+
+
+
+            }
+
+            return true;
+        }
+
+        
+
+
+
+ 
+
+
+
+
+
+
     }
 }
 

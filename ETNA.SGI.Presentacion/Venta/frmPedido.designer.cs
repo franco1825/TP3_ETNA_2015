@@ -61,10 +61,6 @@ namespace ETNA.SGI.Presentacion.Venta
             this.Button25 = new System.Windows.Forms.Button();
             this.Button29 = new System.Windows.Forms.Button();
             this.dtgDetalleProd = new System.Windows.Forms.DataGridView();
-            this.codigoproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preciolistaventa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabPage1 = new System.Windows.Forms.TabPage();
             this.Button12 = new System.Windows.Forms.Button();
             this.txtDireccionEntrega = new System.Windows.Forms.TextBox();
@@ -97,6 +93,10 @@ namespace ETNA.SGI.Presentacion.Venta
             this.Label6 = new System.Windows.Forms.Label();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.cbMonedas = new System.Windows.Forms.ComboBox();
+            this.codigoproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preciolistaventa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabControl1.SuspendLayout();
             this.TabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleProd)).BeginInit();
@@ -457,30 +457,6 @@ namespace ETNA.SGI.Presentacion.Venta
             this.dtgDetalleProd.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDetalleProd_CellEnter);
             this.dtgDetalleProd.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDetalleProd_CellValueChanged);
             // 
-            // codigoproducto
-            // 
-            this.codigoproducto.FillWeight = 63.34158F;
-            this.codigoproducto.HeaderText = "Codigo";
-            this.codigoproducto.Name = "codigoproducto";
-            // 
-            // Nombre
-            // 
-            this.Nombre.FillWeight = 48.82587F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // preciolistaventa
-            // 
-            this.preciolistaventa.FillWeight = 89.34009F;
-            this.preciolistaventa.HeaderText = "Precio";
-            this.preciolistaventa.Name = "preciolistaventa";
-            // 
-            // cantidad
-            // 
-            this.cantidad.FillWeight = 198.4924F;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            // 
             // TabPage1
             // 
             this.TabPage1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -826,6 +802,30 @@ namespace ETNA.SGI.Presentacion.Venta
             this.cbMonedas.TabIndex = 107;
             this.cbMonedas.SelectedIndexChanged += new System.EventHandler(this.cbMonedas_SelectedIndexChanged);
             // 
+            // codigoproducto
+            // 
+            this.codigoproducto.FillWeight = 64.65898F;
+            this.codigoproducto.HeaderText = "Codigo";
+            this.codigoproducto.Name = "codigoproducto";
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 235.476F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // preciolistaventa
+            // 
+            this.preciolistaventa.FillWeight = 47.07308F;
+            this.preciolistaventa.HeaderText = "Precio";
+            this.preciolistaventa.Name = "preciolistaventa";
+            // 
+            // cantidad
+            // 
+            this.cantidad.FillWeight = 52.79187F;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
             // frmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -958,12 +958,12 @@ namespace ETNA.SGI.Presentacion.Venta
         internal System.Windows.Forms.Label Label6;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.ComboBox cbMonedas;
+        internal DataGridView dtgDetalleProd;
+        internal Button btnNuevo2;
+        private Label label7;
         private DataGridViewTextBoxColumn codigoproducto;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn preciolistaventa;
         private DataGridViewTextBoxColumn cantidad;
-        internal DataGridView dtgDetalleProd;
-        internal Button btnNuevo2;
-        private Label label7;
     }
 }

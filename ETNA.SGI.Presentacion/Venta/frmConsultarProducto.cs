@@ -14,45 +14,158 @@ namespace ETNA.SGI.Presentacion.Venta
     public partial class frmConsultarProducto : DevExpress.XtraEditors.XtraForm
     {
         frmPedido frmpedido;
+        frmUpPedido frmuppedido;
 
+        public String origen = "";
         ProductoBL pb = new ProductoBL();
-        PedidoDetalle ped = new PedidoDetalle();
+        PedidoDetalleBE ped = new PedidoDetalleBE();
+        PedidoBL blped = new PedidoBL();
 
         public frmConsultarProducto(frmPedido frm)
         {
             InitializeComponent();
 
             this.frmpedido = frm;
-            
+            origen = frm.Name;
             dataGridView1.DataSource = pb.ObtenerProductos();
             dataGridView1.AllowUserToAddRows = false;
 
         }
 
 
+
+        public frmConsultarProducto(frmUpPedido frm)
+        {
+            InitializeComponent();
+
+            this.frmuppedido = frm;
+
+            origen = frm.Name;
+            dataGridView1.DataSource = pb.ObtenerProductos();
+            dataGridView1.AllowUserToAddRows = false;
+
+        }
+
+
+
+
+
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            Boolean modificado = false;
+          Boolean modificado = false;
             string codigo = this.dataGridView1.SelectedCells[0].Value.ToString();
-            if (frmpedido.dtdetalle.Rows.Count >= 1)
+            
+            if (origen == "frmUpPedido")
             {
 
 
-                foreach (DataRow row in frmpedido.dtdetalle.Rows)
+                if (frmuppedido.dtdetalle.Rows.Count >= 1)
                 {
-                   String codigodetalle = row[0].ToString();
-                    if (codigodetalle == codigo)
+
+                    int cantidadnueva = 0;
+                    foreach (DataRow row in frmuppedido.dtdetalle.Rows)
                     {
-                        row[3] = int.Parse(row[3].ToString())  + 1;
-                        modificado = true;
+                        string codigodetalle = row[0].ToString();
+                        if (codigodetalle == codigo)
+                        {
+                            int pedidodetalle = int.Parse(row[4].ToString());
+
+                            Double cantidad = Double.Parse(row[3].ToString());
+                            int cantidad2 = int.Parse(cantidad.ToString());
+
+                            
+                            row[3] = cantidad2 + 1;
+                            if (blped.updetallepedido(pedidodetalle, int.Parse(row[3].ToString())))
+                            {
+                                MessageBox.Show(
+                                    "Se agrego una cantidad detalle pedido debido a que el item que sea agregar ya existe");
+                                modificado = true;
+
+                            }
+                            else
+                            {
+
+                                MessageBox.Show("No se pudo actualizar la cantidad, Comunicarse con el administrador del sistema");
+                                this.Close();
+                            }
+                            
+                           
+
+                           
+                            
+                        //    row[3] = int.Parse(row[3].ToString()) + 1;
+                        //    cantidadnueva = int.Parse(row[3].ToString());
+                        //    modificado = true;
+                        }
+
+                     
+
+                      
+
+
+
+
+
+                    }
+
+
+
+                    if (modificado == false)
+                    {
+
+
+                        int codigoProducto = pb.obteneridproducto(codigo);
+                        decimal precio = decimal.Parse(this.dataGridView1.SelectedCells[2].Value.ToString());
+
+                        PedidoDetalleBE pedidoDetalleBE = new PedidoDetalleBE();
+                        pedidoDetalleBE.idproducto = codigoProducto;
+                        pedidoDetalleBE.IdPedido = frmuppedido.ped.PKID;
+                        pedidoDetalleBE.cantidad = 1;
+                        pedidoDetalleBE.observacion ="Ingresado en la Modificacion del pedido" ;
+                        pedidoDetalleBE.total = precio;
+
+                        if (blped.inserdetpedido(pedidoDetalleBE))
+                        {
+                            MessageBox.Show(
+                       "Se agrego una detalle al pedido");
+
+                        }
+
+                        //frmpedido.dtdetalle.Rows.Add(codigo,
+                        //           this.dataGridView1.SelectedCells[1].Value.ToString(),
+                        //           Double.Parse(this.dataGridView1.SelectedCells[2].Value.ToString()),
+                        //           1);
+
+                    }
+                }
+                 frmuppedido.actualizarDetalle();
+                 frmuppedido.actualizarmontos();
+                 this.Close();
+
+
+            }
+            else if (origen == "frmPedido")
+            {
+
+                if (frmpedido.dtdetalle.Rows.Count >= 1)
+                {
+
+
+                    foreach (DataRow row in frmpedido.dtdetalle.Rows)
+                    {
+                        String codigodetalle = row[0].ToString();
+                        if (codigodetalle == codigo)
+                        {
+                            row[3] = int.Parse(row[3].ToString()) + 1;
+                            modificado = true;
+                        }
+
                     }
 
                 }
 
-            }
-
-                if ( modificado == true)
+                if (modificado == true)
                 {
                     MessageBox.Show("Se Agregara una cantidad al producto");
                 }
@@ -66,21 +179,31 @@ namespace ETNA.SGI.Presentacion.Venta
                                    Double.Parse(this.dataGridView1.SelectedCells[2].Value.ToString()),
                                    1);
 
+
+                       
                         
+                    }
 
-                        this.Close();
-                    }  
-               
 
+              
+
+                   }
+
+
+
+
+
+
+                frmpedido.actualizarDetalle();
+                frmpedido.actualizarmontos();
 
 
 
                 
             }
 
-                frmpedido.actualizarDetalle();
-                frmpedido.actualizarmontos();
-               this.Close();
+            this.Close();
+          //     this.Close();
            
 
          

@@ -60,9 +60,12 @@
     <Compile Include="Ventas\AlmacenBL.cs" />
     <Compile Include="Ventas\AutenticacionBL.cs" />
     <Compile Include="Ventas\ClientesBL.cs" />
+    <Compile Include="Ventas\DireccionBL.cs" />
+    <Compile Include="Ventas\ModalidadCreditoBL.cs" />
     <Compile Include="Ventas\MonedaBL.cs" />
     <Compile Include="Ventas\PedidoBL.cs" />
     <Compile Include="Ventas\ProductoBL.cs" />
+    <Compile Include="Ventas\VendedorBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ETNA.SGI.Data\ETNA.SGI.Data.csproj">

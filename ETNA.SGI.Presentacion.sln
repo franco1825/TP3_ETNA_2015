@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.SGI.Presentacion", "ETNA.SGI.Presentacion\ETNA.SGI.Presentacion.csproj", "{EDA8802E-F606-4DE8-ADE0-88D22ADCC358}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.SGI.PresentacionFRM", "ETNA.SGI.Presentacion\ETNA.SGI.PresentacionFRM.csproj", "{EDA8802E-F606-4DE8-ADE0-88D22ADCC358}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.SGI.Entity", "ETNA.SGI.Entity\ETNA.SGI.Entity.csproj", "{91B2ABFD-07A9-47F3-8C7F-B514EC846AF0}"
 EndProject

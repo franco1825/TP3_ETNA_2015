@@ -39,15 +39,16 @@ namespace ETNA.SGI.Presentacion.Venta
             emp = be;
             InitializeComponent();
 
-            txtCodVendedor.Text = be.Id.ToString();
-            txtNomVendedor.Text = be.Nombres + " " + be.Apellidos;
+           // txtCodVendedor.Text = be.Id.ToString();
+            //txtNomVendedor.Text = be.Nombres + " " + be.Apellidos;
 
             dtdetalle.Columns.Add("codigo", typeof(String));
             dtdetalle.Columns.Add("nombre", typeof(String));
             dtdetalle.Columns.Add("precio", typeof(Double));
             dtdetalle.Columns.Add("cantidad", typeof(Int32));
+            emp.Id = 0;
 
-            }
+        }
         //BTransaccion objtra = new BTransaccion();
 
         private void Button7_Click(object sender, EventArgs e)
@@ -126,7 +127,7 @@ namespace ETNA.SGI.Presentacion.Venta
 
         private void Button6_Click(object sender, EventArgs e)
         {
-            //new frmConsultarVendedor(this).ShowDialog();
+            new frmConsultarVendedor(this).ShowDialog();
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -147,7 +148,16 @@ namespace ETNA.SGI.Presentacion.Venta
 
         private void Button12_Click(object sender, EventArgs e)
         {
-    //        new frmConsultarDireccione1(this).ShowDialog();
+            if (emp.Id ==0)
+            {
+                MessageBox.Show("Debe seleccionar un cliente para reconocer la direcciones correcta");
+            }
+            else
+            {
+                new frmConsultarDireccion(this, emp.Id).ShowDialog();
+            }
+
+          
         }
 
         private void CheckBox3_CheckedChanged(object sender, EventArgs e)
@@ -247,7 +257,7 @@ namespace ETNA.SGI.Presentacion.Venta
             ped.IDVendedor = int.Parse(txtCodVendedor.Text);
             ped.Observacion = "kjhjkh";
             ped.PrecioIncluyeImpuesto = true;
-            ped.EstadoFacturacion = "BLA BLA BLA";
+            ped.EstadoFacturacion = "PENDIENTE";
             ped.DireccionEntrega = txtDireccionEntrega.Text;
 
             PedidoBL pbl = new PedidoBL();

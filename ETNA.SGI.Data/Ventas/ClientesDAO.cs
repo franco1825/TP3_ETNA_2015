@@ -11,6 +11,105 @@ namespace ETNA.SGI.Data.Ventas
     public class ClientesDAO
     {
 
+        public ClienteBE getcliente(int clienteid)
+        {
+            ClienteBE be = new ClienteBE();
+
+            SqlConnection con = DConexion.obtenerBD();
+
+
+
+            string textoCmd = "sp_vt_getcliente";
+
+            SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+            // 3. add parameter to command, which
+            // will be passed to the stored procedure
+            cmd.Parameters.Add(
+                new SqlParameter("@CLIENTEID", clienteid));
+          
+
+
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+
+                    if (object.ReferenceEquals(dr["ClienteId"], DBNull.Value))
+                    {
+                        be.IdCliente = 0;
+                    }
+                    else
+                    {
+                        be.IdCliente = int.Parse(dr["ClienteId"].ToString());
+                    }
+
+
+                    if (object.ReferenceEquals(dr["codigo"], DBNull.Value))
+                    {
+                        be.Codigo = null;
+                    }
+                    else
+                    {
+                        be.Codigo = dr["codigo"].ToString();
+                    }
+
+
+                    if (object.ReferenceEquals(dr["Nombre"], DBNull.Value))
+                    {
+                        be.Nombre = null;
+                    }
+                    else
+                    {
+                        be.Nombre = dr["Nombre"].ToString();
+                    }
+
+
+                    if (object.ReferenceEquals(dr["CodigoModalidad"], DBNull.Value))
+                    {
+                        be.IDModalidadCredito = 0;
+                    }
+                    else
+                    {
+                        be.IDModalidadCredito = int.Parse(dr["CodigoModalidad"].ToString());
+                    }
+
+
+                    if (object.ReferenceEquals(dr["LineaCredito"], DBNull.Value))
+                    {
+                        be.LineaCredito = 0;
+                    }
+                    else
+                    {
+                        be.LineaCredito = Decimal.Parse(dr["LineaCredito"].ToString());
+                    }
+
+
+
+
+
+
+
+
+
+
+
+                }
+            }
+
+
+
+            return be;
+
+        }
+
+
         public  DataTable ObtenerClientes()
         {
 

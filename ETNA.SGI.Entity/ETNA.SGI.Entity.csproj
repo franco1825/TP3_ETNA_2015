@@ -30,8 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,15 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ventas\DireccionBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ventas\AlmacenBE.cs" />
     <Compile Include="Ventas\ClienteBE.cs" />
     <Compile Include="Ventas\EmpleadosBE.cs" />
+    <Compile Include="Ventas\ModalidadCreditoBE.cs" />
     <Compile Include="Ventas\Moneda.cs" />
     <Compile Include="Ventas\PedidoBE.cs" />
-    <Compile Include="Ventas\PedidoDetalle.cs" />
+    <Compile Include="Ventas\PedidoDetalleBE.cs" />
     <Compile Include="Ventas\ProductoBE.cs" />
     <Compile Include="Ventas\UsuarioBE.cs" />
     <Compile Include="Ventas\Vendedor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

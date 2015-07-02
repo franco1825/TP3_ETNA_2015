@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using ETNA.SGI.Entity.Ventas;
 
 namespace ETNA.SGI.Data.Ventas
 {
@@ -52,6 +53,69 @@ namespace ETNA.SGI.Data.Ventas
             return datos;
 
         }
+
+
+        public AlmacenBE getalmacen(int codemp)
+        {
+            AlmacenBE be = new AlmacenBE();
+
+            SqlConnection con = DConexion.obtenerBD();
+
+
+
+            string textoCmd = "sp_vt_almacen";
+
+            SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+            // 3. add parameter to command, which
+            // will be passed to the stored procedure
+            cmd.Parameters.Add(
+                new SqlParameter("@codalmacen", codemp));
+
+
+
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+
+                    if (object.ReferenceEquals(dr["AlmacenId"], DBNull.Value))
+                    {
+                        be.AlmacenId = 0;
+                    }
+                    else
+                    {
+                        be.AlmacenId = int.Parse(dr["AlmacenId"].ToString());
+                    }
+
+
+                    if (object.ReferenceEquals(dr["Nombre"], DBNull.Value))
+                    {
+                        be.Nombre = null;
+                    }
+                    else
+                    {
+                        be.Nombre = dr["Nombre"].ToString();
+                    }
+
+
+
+
+                }
+            }
+
+
+
+            return be;
+
+        }
+
 
 
     }

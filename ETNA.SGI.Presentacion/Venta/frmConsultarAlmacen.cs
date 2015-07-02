@@ -14,7 +14,8 @@ namespace ETNA.SGI.Presentacion.Venta
     public partial class frmConsultarAlmacen : DevExpress.XtraEditors.XtraForm
     {
         frmPedido frmpedido;
-
+        string origenform = "";
+        frmUpPedido frmuppedido;
         AlmacenBL alma = new AlmacenBL();
 
         public frmConsultarAlmacen(frmPedido frm)
@@ -22,18 +23,43 @@ namespace ETNA.SGI.Presentacion.Venta
             InitializeComponent();
 
             this.frmpedido = frm;
+            origenform = frm.Name;
             DataGridView1.DataSource = alma.ObtenerAlmacenes();
             DataGridView1.AllowUserToAddRows = false;
 
 
         }
 
+        public frmConsultarAlmacen(frmUpPedido frm)
+        {
+            InitializeComponent();
+
+            this.frmuppedido = frm;
+            origenform = frm.Name;
+            DataGridView1.DataSource = alma.ObtenerAlmacenes();
+            DataGridView1.AllowUserToAddRows = false;
+
+
+        }
+
+
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-
-            frmpedido.txtCodAlmacen.Text = this.DataGridView1.SelectedCells[0].Value.ToString();
+            if (origenform == "frmPedido")
+            {
+                     frmpedido.txtCodAlmacen.Text = this.DataGridView1.SelectedCells[0].Value.ToString();
             frmpedido.txtNomAlmacen.Text = this.DataGridView1.SelectedCells[1].Value.ToString();
+       
+            }
+            else if (origenform == "frmUpPedido")
+            {
+                frmuppedido.txtCodAlmacen.Text = this.DataGridView1.SelectedCells[0].Value.ToString();
+                frmuppedido.txtNomAlmacen.Text = this.DataGridView1.SelectedCells[1].Value.ToString();
+       
+            }
+
+
             this.Close();
          
         }

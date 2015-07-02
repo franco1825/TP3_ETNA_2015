@@ -21,6 +21,7 @@ namespace ETNA.SGI.Presentacion.Venta
 
         string origenform = "";
         frmPedido frmpedido;
+        frmUpPedido frmuppedido;
         
         ClienteBL cbl = new ClienteBL();
 
@@ -43,6 +44,20 @@ namespace ETNA.SGI.Presentacion.Venta
 
           DataGridView1.DataSource = cbl.ObtenerClientes();
           DataGridView1.AllowUserToAddRows = false;
+
+
+        }
+
+
+        public frmConsultarCliente(frmUpPedido frm)
+        {
+            InitializeComponent();
+
+            this.frmuppedido = frm;
+            origenform = frm.Name;
+
+            DataGridView1.DataSource = cbl.ObtenerClientes();
+            DataGridView1.AllowUserToAddRows = false;
 
 
         }
@@ -83,6 +98,18 @@ namespace ETNA.SGI.Presentacion.Venta
                 
                 frmpedido.emp.Id = int.Parse( this.DataGridView1.SelectedCells[7].Value.ToString());
                 frmpedido.emp.codmodalidad = int.Parse( this.DataGridView1.SelectedCells[8].Value.ToString());
+            }else if (origenform == "frmUpPedido" ) {
+                frmuppedido.txtCodCliente.Text = this.DataGridView1.SelectedCells[0].Value.ToString();
+                frmuppedido.txtNombreCliente.Text = this.DataGridView1.SelectedCells[1].Value.ToString();
+                frmuppedido.txtDocIdentidad.Text = this.DataGridView1.SelectedCells[2].Value.ToString();
+                frmuppedido.txtDireccion.Text = this.DataGridView1.SelectedCells[3].Value.ToString();
+                frmuppedido.txtDireccionEntrega.Text = this.DataGridView1.SelectedCells[4].Value.ToString();
+                frmuppedido.txtmodalidad.Text = this.DataGridView1.SelectedCells[5].Value.ToString();
+                frmuppedido.txtlineacredito.Text = this.DataGridView1.SelectedCells[6].Value.ToString();
+
+                frmuppedido.emp.Id = int.Parse(this.DataGridView1.SelectedCells[7].Value.ToString());
+                frmuppedido.emp.codmodalidad = int.Parse(this.DataGridView1.SelectedCells[8].Value.ToString());
+       
             }
 
 
